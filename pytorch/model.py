@@ -41,11 +41,11 @@ class default_network(torch.nn.Module):
     def __init__(self,
                  input_len: int,
                  output_len: int,
-                 num_filt: Optional[float] = 16,
-                 strides: Optional[tuple] = (1, 1),
-                 filt_size: Optional[tuple] = (32, 2),
-                 pool_size: Optional[tuple] = (16, 1),
-                 fc_num_nodes: Optional[list] = [128, 64, 32],
+                 num_filt: Optional[float] = 64,
+                 strides: Optional[tuple] = (4, 1),
+                 filt_size: Optional[tuple] = (256, 2),
+                 pool_size: Optional[tuple] = (64, 1),
+                 fc_num_nodes: Optional[list] = [512, 256, 128],
                  padding: Optional[tuple] = (0, 0)
                  ) -> None:
         """
@@ -153,6 +153,6 @@ def calc_output_dims(h_in: int, w_in: int, c: int,
     return c_out, h_out, w_out
 
 if __name__ == '__main__':
-    MODEL = default_network(input_len=2048, output_len=12)
+    MODEL = default_network(input_len=240000000, output_len=3)
     MODEL.forward(MODEL.get_dummy_data(64))
     summary(model=MODEL, batch_size=128)
