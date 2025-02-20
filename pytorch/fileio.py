@@ -124,7 +124,7 @@ def load_waveform(data_folder: str, num_samples: float, shuffle: bool) \
 
     """
     data = WaveformDataset(root=data_folder,
-                                   dtype=np.flaot32,
+                                   dtype=np.float32,
                                    shuffle=shuffle,
                                    num_samples=num_samples)
     return data
