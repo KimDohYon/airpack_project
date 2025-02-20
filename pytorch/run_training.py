@@ -96,10 +96,10 @@ def main(data_folder: Union[str, os.PathLike], n_epoch: int = 10) -> float:
     test_data_folder = data_folder / "test"    # Location of training data (validation subset)
     model_save_folder = _airpack_root / "output" / "pytorch"
     os.makedirs(model_save_folder, exist_ok=True)
-    input_len = 2048  # signal Window length in complex samples
-    output_len = 12  # Number of signal classes
+    input_len = 240000000  # signal Window length in complex samples
+    output_len = 20  # Number of signal classes
     learning_rate = 1e-3    # Learning rate
-    batch_size = 64  # Number of signals to average for each training calculation
+    batch_size = 1  # Number of signals to average for each training calculation
     normalize_scalar = 1000 # Scalar multiplied by input to normalize the data
 
     # Import Data Sets
