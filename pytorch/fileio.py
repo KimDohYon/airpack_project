@@ -124,10 +124,14 @@ def load_waveform(data_folder: str, num_samples: float, shuffle: bool) \
 
     """
     data = WaveformDataset(root=data_folder,
-                                   dtype=np.int16,
+                                   dtype=np.flaot32,
                                    shuffle=shuffle,
                                    num_samples=num_samples)
     return data
 
 if __name__ == "__main__":
-    load_waveform("/data", 2048, True)
+    dataset = load_waveform("/data", 240000000, True)
+    waveform, label = dataset[0]
+    segments = torch.chunk(waveform.view(-1), 100)
+    for i, segment in enumerate(segments):
+        print(f"Segment {i}: {segment.shape}")
