@@ -5,12 +5,6 @@
 # SOURCE CODE TERMS OF USE, which is provided with the code. If a copy of the license was not
 # received, please write to support@deepwavedigital.com
 
-"""Pytorch backend for AirPack.
-
-When this module is imported, it will check to make sure that the version
-of Pytorch present on your system is compatible with this backend.
-"""
-
 import pkg_resources
 import torch
 
