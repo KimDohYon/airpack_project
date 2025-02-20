@@ -153,6 +153,6 @@ def calc_output_dims(h_in: int, w_in: int, c: int,
     return c_out, h_out, w_out
 
 if __name__ == '__main__':
-    MODEL = default_network(input_len=240000000, output_len=3)
+    MODEL = default_network(input_len=240000000, output_len=20)
     MODEL.forward(MODEL.get_dummy_data(64))
     summary(model=MODEL, batch_size=1)
