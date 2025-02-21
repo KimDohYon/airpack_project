@@ -86,7 +86,7 @@ class WaveformDataset(torch.utils.data.Dataset):
 
         #labels = dict(field.split("=", 2) for field in fileid.split("_")) # this needs to just be a number
         filename = os.path.join(path, fileid + suffix)
-        label = int(os.path.basename(os.path.dirname(filename)))
+        label = os.path.basename(os.path.dirname(filename))
         waveform = np.fromfile(filename, dtype=self.dtype)
 
         if self.dtype == np.complex128:
